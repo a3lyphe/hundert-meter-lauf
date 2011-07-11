@@ -1,14 +1,15 @@
-<html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>Summergame3200</title>
-		<link
-			rel="shortcut icon"
+<!DOCTYPE>
+<HTML>
+	<HEAD>
+		<META charset=utf-8>
+		<TITLE>Hundertmeterlauf[master]</TITLE>
+		<LINK
+			rel=shortcut%20icon
 			href=../IMAGES/juttiball3.gif
 			type=image/gif
-		 />
-		<style type="text/css" media="screen">
-		/* <![CDATA[ */
+		>
+		<STYLE media="screen">
+			/*
 			@import url("../STYLES/Himmel/0.0.0.css");
 			@import url("../STYLES/AnzeigeTafel/0.0.0.css");
 			@import url("../STYLES/Stadion/0.0.0.css");
@@ -17,6 +18,16 @@
 			@import url("../STYLES/Spieler/0.0.0.css");
 			@import url("../STYLES/SpielerAuswahl/0.0.0.css");
 			@import url("../STYLES/Rasen/0.0.0.css");
+			*//*TO*/
+			@import url("../STYLES/Himmel/STYLE.CSS");
+			@import url("../STYLES/AnzeigeTafel/STYLE.CSS");
+			@import url("../STYLES/Stadion/STYLE.CSS");
+			@import url("../STYLES/LaufBahn/STYLE.CSS");
+			@import url("../STYLES/SpielAuswahl/STYLE.CSS");
+			@import url("../STYLES/Spieler/STYLE.CSS");
+			@import url("../STYLES/SpielerAuswahl/STYLE.CSS");
+			@import url("../STYLES/Rasen/STYLE.CSS");
+			
 			/*+General*/
 			body{
 				background-image:url('../IMAGES/hintergrund_red.jpg');
@@ -210,10 +221,8 @@
 				left:40%;
 				top:40%;
 			}
-		/* ]]> */
-		</style>
-		<script type="text/javascript" language="javascript" charset="utf-8">
-		// <![CDATA[
+		</STYLE>
+		<SCRIPT>
 			$=function(id){return(document.getElementById(id));}
 			var Koerperteil={
 				"Farbe":{
@@ -806,10 +815,8 @@
 					break;
 				}
 			}
-		// ]]>
-		</script>
-	</head>
-	<body id="body " onload="init()"}>
+		</SCRIPT>
+	<BODY id=body onload=init()>
 		<div id="Mainscreen">
 			<div id="Hauptmenu">
 				<div id="HundertMeter_Info_Button" class="HundertMeter_Button" onmouseover="light(this,999999)" onmouseout="light(this,888888)" onclick="openWindow('HundertMeter_Info')">Info</div>
@@ -1064,5 +1071,3 @@
 				>
 			</a>
 		</div>
-	</body>
-</html>
