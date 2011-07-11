@@ -1,0 +1,1068 @@
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>Summergame3200</title>
+		<link
+			rel="shortcut icon"
+			href=../IMAGES/juttiball3.gif
+			type=image/gif
+		 />
+		<style type="text/css" media="screen">
+		/* <![CDATA[ */
+			@import url("../STYLES/Himmel/0.0.0.css");
+			@import url("../STYLES/AnzeigeTafel/0.0.0.css");
+			@import url("../STYLES/Stadion/0.0.0.css");
+			@import url("../STYLES/LaufBahn/0.0.0.css");
+			@import url("../STYLES/SpielAuswahl/0.0.0.css");
+			@import url("../STYLES/Spieler/0.0.0.css");
+			@import url("../STYLES/SpielerAuswahl/0.0.0.css");
+			@import url("../STYLES/Rasen/0.0.0.css");
+			/*+General*/
+			body{
+				background-image:url('../IMAGES/hintergrund_red.jpg');
+				background-repeat:repeat;
+				overflow:hidden;
+			}
+			div{
+				position:absolute;
+			}
+			/*-General*/
+			#Mainscreen{
+				left:20%;
+				top:10%;
+				width:60%;
+				height:80%;
+				background-image:url('../IMAGES/walltexture04.jpg');
+				background-repeat:repeat;
+				overflow:hidden;
+			}
+			#HundertMeter_Info{
+				left:0%;
+				top:0%;
+				width:100%;
+				height:100%;
+				background-image:url('../IMAGES/walltexture03.jpg');
+				background-repeat:repeat;
+				overflow:hidden;
+			}
+			
+			
+			#GameFenster{
+				left:0%;
+				top:0%;
+				width:100%;
+				height:100%;
+				background-color:yellow;
+			}
+			#HundertMeter{
+				left:0%;
+				top:0%;
+				width:100%;
+				height:100%;
+				background-color:yellow;
+			}
+			
+			
+			#HundertMeter_Startbutton{
+				left:40%;
+				top:34%;
+				width:20%;
+				height:55%;
+				background-color:red;
+				text-align:center;
+				color:yellow;
+				font-size:180%;
+			}
+			#HundertMeter_BackToHauptmenu{
+				left:0%;
+				top:70%;
+				width:10%;
+				height:30%;
+				background-color:#888888;
+				text-align:center;
+			}
+			
+			#HundertMeter_Info_BackToHauptmenu{
+				left:90%;
+				top:90%;
+				width:10%;
+				height:10%;
+				background-color:#888888;
+				text-align:center;
+			}
+			#HundertMeter_Spieler1_Select{
+				left:10%;
+				top:10%;
+				width:20%;
+				height:20%;
+				background-color:#888888;
+			}
+			#HundertMeter_Spieler2_Select{
+				left:10%;
+				top:40%;
+				width:20%;
+				height:20%;
+				background-color:#888888;
+			}
+			#HundertMeter_Spieler3_Select{
+				left:40%;
+				top:10%;
+				width:20%;
+				height:20%;
+				background-color:#888888;
+			}
+			#HundertMeter_Spieler4_Select{
+				left:40%;
+				top:40%;
+				width:20%;
+				height:20%;
+				background-color:#888888;
+			}
+
+			.HundertMeter_ComputerSpieler_Level{
+				left:30%;
+				top:30%;
+				background-color:green;
+				width:40%;
+				height:40%;
+				text-align:center;
+				font-size:140%;
+			}
+
+			#Hauptmenu{
+				left:30%;
+				top:20%;
+				width:40%;
+				height:60%;
+				background-image:url('../IMAGES/walltexture03.jpg');
+				background-repeat:repeat;
+				overflow:hidden;
+			}
+			
+			#Spielerauswahlbutton{
+				left:10%;
+				top:40%;
+				width:80%;
+				height:10%;
+				background-image:url('../IMAGES/walltexture02.jpg');
+				background-repeat:repeat;
+				overflow:hidden;
+				text-align:center;
+			}
+			#Spielauswahlbutton{
+				left:10%;
+				top:60%;
+				width:80%;
+				height:10%;
+				background-image:url('../IMAGES/walltexture02.jpg');
+				background-repeat:repeat;
+				overflow:hidden;
+				text-align:center;
+			}
+			#HundertMeter_Info_Button{
+				left:10%;
+				top:10%;
+				width:80%;
+				height:10%;
+				background-image:url('../IMAGES/walltexture02.jpg');
+				background-repeat:repeat;
+				overflow:hidden;
+				text-align:center;
+			}
+			#Startbutton{
+				left:10%;
+				top:80%;
+				width:80%;
+				height:10%;
+				background-image:url('../IMAGES/walltexture02.jpg');
+				background-repeat:repeat;
+				overflow:hidden;
+				text-align:center;
+			}
+			.GameAuswahlButton{
+				width:40%;
+				height:40%;
+				background-color:#888888;
+				text-align:center;
+			}
+			#Spielauswahl{
+				left:0%;
+				top:0%;
+				width:100%;
+				height:100%;
+				background-image:url('../IMAGES/walltexture02.jpg');
+				background-repeat:repeat;
+				overflow:hidden;
+			}
+			#Spielauswahl_BackToHauptmenu{
+				left:90%;
+				top:90%;
+				width:10%;
+				height:10%;
+				background-color:#888888;
+				text-align:center;
+			}
+			#HundertMeter_Auswahlbutton{
+				left:30%;
+				top:30%;
+			}
+			#Nullmeter_Auswahlbutton{
+				left:40%;
+				top:40%;
+			}
+		/* ]]> */
+		</style>
+		<script type="text/javascript" language="javascript" charset="utf-8">
+		// <![CDATA[
+			$=function(id){return(document.getElementById(id));}
+			var Koerperteil={
+				"Farbe":{
+					"Haut1":"#fbc7c8"
+					,"Haut2":"#b56516"
+					,"Haut3":"#ffe8c9"
+					,"Haut4":"#f8dde8"
+					,"Trikot1":"blue"
+					,"Trikot2":"white"
+					,"Trikot3":"#33a1b5"
+					,"Trikot4":"#68e542"
+					,"Trikot5":"#aed2a3"
+					,"Trikot6":"#35831d"
+					,"Trikot7":"#ab4e4e"
+					,"Trikot8":"#e78484"
+					,"Trikot9":"#e14747"
+					,"Trikot10":"#c7dc3a"
+					,"Trikot11":"#98a258"
+					,"Trikot12":"#b3c917"
+					,"Haare1":"black"
+					,"Haare2":"#674567"
+					,"Haare3":"#f8dd20"
+					,"Haare4":"#b35717"
+					,"Fuss1":"black"
+				}
+			}
+			Player=function(){
+				this.id;
+				this.select;
+				this.Level;
+				this.Tastgedruekt;
+				this.FehlStartCounter;
+				this.IstImZiel;
+				this.Interval;
+				this.Koerperteile=function(){
+					this.Kopf;
+					this.Haare;
+					this.Hand_Links;
+					this.Hand_Rechts;
+					this.Arm_Links;
+					this.Arm_Rechts;
+					this.Schulter;
+					this.Brust;
+					this.Huefte;
+					this.Bein_Links;
+					this.Bein_Rechts;
+					this.Fuss_Links;
+					this.Fuss_Rechts;
+				}
+			}
+			init=function(){
+				HauptFensterInit();
+				HundertMeter_SpielerInit();
+			}
+			HauptFensterInit=function(){
+				Hauptfenster=['Hauptmenu','HundertMeter_Info','Spielerauswahl','Spielauswahl','GameFenster'];
+				for(all in Hauptfenster){
+					$(Hauptfenster[all]).style.display='none';
+				}
+				$('Hauptmenu').style.display='block';
+			}
+			HundertMeter_SpielerInit=function(){
+				HundertMeter_HundertMeter_SpielerAnzahl=4;
+				for(i=1;i<=HundertMeter_HundertMeter_SpielerAnzahl;i++){
+					eval('HundertMeter_Spieler'+i+'=new Player()');
+				}
+				HundertMeter_Spieler1.Koerperteile.Kopf=Koerperteil.Farbe.Haut1;
+				HundertMeter_Spieler2.Koerperteile.Kopf=Koerperteil.Farbe.Haut2;
+				HundertMeter_Spieler3.Koerperteile.Kopf=Koerperteil.Farbe.Haut3;
+				HundertMeter_Spieler4.Koerperteile.Kopf=Koerperteil.Farbe.Haut4;
+				HundertMeter_Spieler1.Koerperteile.Haare=Koerperteil.Farbe.Haare1;
+				HundertMeter_Spieler2.Koerperteile.Haare=Koerperteil.Farbe.Haare2;
+				HundertMeter_Spieler3.Koerperteile.Haare=Koerperteil.Farbe.Haare3;
+				HundertMeter_Spieler4.Koerperteile.Haare=Koerperteil.Farbe.Haare4;
+				HundertMeter_Spieler1.Koerperteile.Hand_Links=Koerperteil.Farbe.Haut1;
+				HundertMeter_Spieler2.Koerperteile.Hand_Links=Koerperteil.Farbe.Haut2;
+				HundertMeter_Spieler3.Koerperteile.Hand_Links=Koerperteil.Farbe.Haut3;
+				HundertMeter_Spieler4.Koerperteile.Hand_Links=Koerperteil.Farbe.Haut4;
+				HundertMeter_Spieler1.Koerperteile.Hand_Rechts=Koerperteil.Farbe.Haut1;
+				HundertMeter_Spieler2.Koerperteile.Hand_Rechts=Koerperteil.Farbe.Haut2;
+				HundertMeter_Spieler3.Koerperteile.Hand_Rechts=Koerperteil.Farbe.Haut3;
+				HundertMeter_Spieler4.Koerperteile.Hand_Rechts=Koerperteil.Farbe.Haut4;
+				HundertMeter_Spieler1.Koerperteile.Fuss_Links=Koerperteil.Farbe.Fuss1;
+				HundertMeter_Spieler2.Koerperteile.Fuss_Links=Koerperteil.Farbe.Fuss1;
+				HundertMeter_Spieler3.Koerperteile.Fuss_Links=Koerperteil.Farbe.Fuss1;
+				HundertMeter_Spieler4.Koerperteile.Fuss_Links=Koerperteil.Farbe.Fuss1;
+				HundertMeter_Spieler1.Koerperteile.Fuss_Rechts=Koerperteil.Farbe.Fuss1;
+				HundertMeter_Spieler2.Koerperteile.Fuss_Rechts=Koerperteil.Farbe.Fuss1;
+				HundertMeter_Spieler3.Koerperteile.Fuss_Rechts=Koerperteil.Farbe.Fuss1;
+				HundertMeter_Spieler4.Koerperteile.Fuss_Rechts=Koerperteil.Farbe.Fuss1;
+				HundertMeter_Spieler1.Koerperteile.Schulter=Koerperteil.Farbe.Trikot1;
+				HundertMeter_Spieler1.Koerperteile.Brust=Koerperteil.Farbe.Trikot2;
+				HundertMeter_Spieler1.Koerperteile.Huefte=Koerperteil.Farbe.Trikot3;
+				HundertMeter_Spieler1.Koerperteile.Arm_Links=Koerperteil.Farbe.Trikot1;
+				HundertMeter_Spieler1.Koerperteile.Arm_Rechts=Koerperteil.Farbe.Trikot1;
+				HundertMeter_Spieler1.Koerperteile.Bein_Links=Koerperteil.Farbe.Trikot1;
+				HundertMeter_Spieler1.Koerperteile.Bein_Rechts=Koerperteil.Farbe.Trikot1;
+				HundertMeter_Spieler2.Koerperteile.Schulter=Koerperteil.Farbe.Trikot4;
+				HundertMeter_Spieler2.Koerperteile.Brust=Koerperteil.Farbe.Trikot5;
+				HundertMeter_Spieler2.Koerperteile.Huefte=Koerperteil.Farbe.Trikot6;
+				HundertMeter_Spieler2.Koerperteile.Arm_Links=Koerperteil.Farbe.Trikot4;
+				HundertMeter_Spieler2.Koerperteile.Arm_Rechts=Koerperteil.Farbe.Trikot4;
+				HundertMeter_Spieler2.Koerperteile.Bein_Links=Koerperteil.Farbe.Trikot4;
+				HundertMeter_Spieler2.Koerperteile.Bein_Rechts=Koerperteil.Farbe.Trikot4;
+				HundertMeter_Spieler3.Koerperteile.Schulter=Koerperteil.Farbe.Trikot7;
+				HundertMeter_Spieler3.Koerperteile.Brust=Koerperteil.Farbe.Trikot8;
+				HundertMeter_Spieler3.Koerperteile.Huefte=Koerperteil.Farbe.Trikot9;
+				HundertMeter_Spieler3.Koerperteile.Arm_Rechts=Koerperteil.Farbe.Trikot7;
+				HundertMeter_Spieler3.Koerperteile.Arm_Links=Koerperteil.Farbe.Trikot7;
+				HundertMeter_Spieler3.Koerperteile.Bein_Rechts=Koerperteil.Farbe.Trikot7;
+				HundertMeter_Spieler3.Koerperteile.Bein_Links=Koerperteil.Farbe.Trikot7;
+				HundertMeter_Spieler4.Koerperteile.Schulter=Koerperteil.Farbe.Trikot10;
+				HundertMeter_Spieler4.Koerperteile.Brust=Koerperteil.Farbe.Trikot11;
+				HundertMeter_Spieler4.Koerperteile.Huefte=Koerperteil.Farbe.Trikot12;
+				HundertMeter_Spieler4.Koerperteile.Arm_Rechts=Koerperteil.Farbe.Trikot10;
+				HundertMeter_Spieler4.Koerperteile.Arm_Links=Koerperteil.Farbe.Trikot10;
+				HundertMeter_Spieler4.Koerperteile.Bein_Rechts=Koerperteil.Farbe.Trikot10;
+				HundertMeter_Spieler4.Koerperteile.Bein_Links=Koerperteil.Farbe.Trikot10;
+				for(i=1;i<=HundertMeter_HundertMeter_SpielerAnzahl;i++){
+					eval('HundertMeter_Spieler'+i+'.FehlStartCounter=0');
+					eval('HundertMeter_Spieler'+i+'.Level=100');
+					eval('HundertMeter_Spieler'+i+'.select=\'Computer\'');
+					eval('$(\'HundertMeter_Spieler'+i+'_Kopf\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Kopf;');
+					eval('$(\'HundertMeter_Spieler'+i+'_Kopf_Haare\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Haare;');
+					eval('$(\'HundertMeter_Spieler'+i+'_HandLinks\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Hand_Links;');
+					eval('$(\'HundertMeter_Spieler'+i+'_HandRechts\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Hand_Rechts;');
+					eval('$(\'HundertMeter_Spieler'+i+'_ArmLinks_TeilA\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Arm_Links;');
+					eval('$(\'HundertMeter_Spieler'+i+'_ArmLinks_TeilB\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Arm_Links;');
+					eval('$(\'HundertMeter_Spieler'+i+'_ArmRechts_TeilA\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Arm_Rechts;');
+					eval('$(\'HundertMeter_Spieler'+i+'_ArmRechts_TeilB\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Arm_Rechts;');
+					eval('$(\'HundertMeter_Spieler'+i+'_BeinLinks_TeilA\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Bein_Links;');
+					eval('$(\'HundertMeter_Spieler'+i+'_BeinLinks_TeilB\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Bein_Links;');
+					eval('$(\'HundertMeter_Spieler'+i+'_BeinRechts_TeilA\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Bein_Rechts;');
+					eval('$(\'HundertMeter_Spieler'+i+'_BeinRechts_TeilB\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Bein_Rechts;');
+					eval('$(\'HundertMeter_Spieler'+i+'_Schulter\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Schulter;');
+					eval('$(\'HundertMeter_Spieler'+i+'_Brust\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Brust;');
+					eval('$(\'HundertMeter_Spieler'+i+'_Huefte\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Huefte;');
+					eval('$(\'HundertMeter_Spieler'+i+'_FussLinks\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Fuss_Links;');
+					eval('$(\'HundertMeter_Spieler'+i+'_FussRechts\').style.backgroundColor=HundertMeter_Spieler'+i+'.Koerperteile.Fuss_Rechts;');
+					eval('$(\'HundertMeter_Spieler'+i+'_Select_Output\').innerHTML=HundertMeter_Spieler'+i+'.select;');
+					eval('$(\'HundertMeter_ComputerSpieler'+i+'Level\').innerHTML=HundertMeter_Spieler'+i+'.Level');
+				}
+			}
+
+			ChangeGameAuswahl=function(game){
+				WelchesSpielIstAusgewählt=game;
+			}
+
+			WelchesSpielIstAusgewählt='HundertMeter';
+
+			openWindow=function(wer){
+				for(all in Hauptfenster){
+					$(Hauptfenster[all]).style.display='none';
+				}
+				$(wer).style.display='block';
+				if(wer=='GameFenster'){
+					eval(WelchesSpielIstAusgewählt+'_Init()');
+				}
+			}
+
+			HundertMeter_Init=function(){
+				HundertMeter_PixelBreite=10;
+				HundertMeter_PixelHoehe=20;
+				HundertMeter_BahnLenge=$('HundertMeter').offsetWidth;
+				HundertMeter_Laufeinheiten=100;
+				HundertMeter_Schrittweite=HundertMeter_BahnLenge/HundertMeter_Laufeinheiten;
+				HundertMeter_Startbereich=($('HundertMeter').offsetWidth/100)*5;
+				HundertMeter_Laufbereich=($('HundertMeter').offsetWidth/100)*85;
+				HundertMeter_Zielbereich=($('HundertMeter').offsetWidth/100)*15;
+				HundertMeter_DefaultSettings();
+				HundertMeter_BindKeys();
+				HundertMeter_HimmelGenerator();
+				HundertMeter_RasenGenerator();
+				HundertMeter_LaufbahnObenGenerator();
+				HundertMeter_LaufbahnUntenGenerator();
+				HundertMeter_LaufbahnMitteGenerator();
+				HundertMeter_Stadion_SitzschalenGenerator();
+				HundertMeter_Stadion_PublikumGenerator();
+			}
+			HundertMeter_DefaultSettings=function(){
+				HundertMeter_RennenLeuft=false;
+				HundertMeter_StartGedrueckt=false;
+				HundertMeter_AnzeigeTafel_Display_ZeitnahmePosition=1;
+				$('HundertMeter_Rasen_ZeitAnzeige_Display_Output').innerHTML='';
+				for(i=1;i<=HundertMeter_HundertMeter_SpielerAnzahl;i++){
+					eval('HundertMeter_Spieler'+i+'.Tastgedruekt=false');
+					eval('HundertMeter_Spieler'+i+'.IstImZiel=false');
+					eval('$(\'HundertMeter_Spieler'+i+'\').style.left=HundertMeter_Startbereich');
+					eval('$(\'HundertMeter_AnzeigeTafel_Display_Zeitnahme'+i+'\').innerHTML=\''+i+'.Platz\'');
+				}
+			}
+			function HundertMeter_BindKeys(){
+				document.onkeydown=function(e){
+					e=e||window.event;
+					switch (e.keyCode){ // which key was pressed?
+						case 89:// y
+							if(HundertMeter_Spieler1.select=='Mensch'){
+								if(HundertMeter_Spieler1.Tastgedruekt==false){
+									HundertMeter_Bewegung(1);
+									HundertMeter_HundertMeter_SpielerAnniA(1);
+									HundertMeter_Spieler1.Tastgedruekt=true;
+								}
+							}
+						break;
+						case 88:// x
+							if(HundertMeter_Spieler1.select=='Mensch'){
+								HundertMeter_HundertMeter_SpielerAnniB(1);
+								HundertMeter_Spieler1.Tastgedruekt=false;
+							}
+						break;
+						case 78:// n
+							if(HundertMeter_Spieler2.select=='Mensch'){
+								if(HundertMeter_Spieler2.Tastgedruekt==false){
+									HundertMeter_Bewegung(2);
+									HundertMeter_HundertMeter_SpielerAnniA(2);
+									HundertMeter_Spieler2.Tastgedruekt=true;
+								}
+							}
+						break;
+						case 77:// m
+							if(HundertMeter_Spieler2.select=='Mensch'){
+								HundertMeter_HundertMeter_SpielerAnniB(2);
+								HundertMeter_Spieler2.Tastgedruekt=false;
+							}
+						break;
+						case 49:// 1
+							if(HundertMeter_Spieler3.select=='Mensch'){
+								if(HundertMeter_Spieler3.Tastgedruekt==false){
+									HundertMeter_Bewegung(3);
+									HundertMeter_HundertMeter_SpielerAnniA(3);
+									HundertMeter_Spieler3.Tastgedruekt=true;
+								}
+							}
+						break;
+						case 81:// q
+							if(HundertMeter_Spieler3.select=='Mensch'){
+								HundertMeter_HundertMeter_SpielerAnniB(3);
+								HundertMeter_Spieler3.Tastgedruekt=false;
+							}
+						break;
+						case 79:// 0
+							if(HundertMeter_Spieler4.select=='Mensch'){
+								if(HundertMeter_Spieler4.Tastgedruekt==false){
+									HundertMeter_Bewegung(4);
+									HundertMeter_HundertMeter_SpielerAnniA(4);
+									HundertMeter_Spieler4.Tastgedruekt=true;
+								}
+							}
+						break;
+						case 48:// o
+							if(HundertMeter_Spieler4.select=='Mensch'){
+								HundertMeter_HundertMeter_SpielerAnniB(4);
+								HundertMeter_Spieler4.Tastgedruekt=false;
+							}
+						break;
+					}
+				}
+				document.onkeyup=function(e){
+					e=e||window.event;
+					switch (e.keyCode){
+					}
+				}
+			}
+			HundertMeter_HimmelGenerator=function(){
+				HundertMeter_HimmelHTML='';
+				HundertMeter_HimmelBreite=HundertMeter_PixelBreite;
+				HundertMeter_HimmelHoehe=HundertMeter_PixelHoehe;
+				for(r=0;r<100/HundertMeter_PixelBreite;r++){
+					for(t=0;t<100/HundertMeter_HimmelHoehe;t++){
+						HundertMeter_HimmelHTML+='<div class="HundertMeter_Himmelteil" style="left:'+r*HundertMeter_HimmelBreite+'%;top:'+t*HundertMeter_HimmelHoehe+'%;background-color:rgb('+parseInt((Math.random()*30)+90)+','+parseInt((Math.random()*20)+210)+','+parseInt((Math.random()*30)+210)+')"></div>'
+					}
+				}
+				$('HundertMeter_HimmelContainer').innerHTML=HundertMeter_HimmelHTML;
+			}
+			HundertMeter_RasenGenerator=function(){
+				HundertMeter_RasenHTML='';
+				HundertMeter_RasenBreite=HundertMeter_PixelBreite;
+				HundertMeter_RasenHoehe=HundertMeter_PixelHoehe;
+				for(r=0;r<100/HundertMeter_PixelBreite;r++){
+					for(t=0;t<100/HundertMeter_HimmelHoehe;t++){
+						HundertMeter_RasenHTML+='<div class="HundertMeter_Rasen_Teil" style="left:'+r*HundertMeter_RasenBreite+'%;top:'+t*HundertMeter_RasenHoehe+'%;background-color:rgb('+parseInt(Math.random()*30)+','+parseInt((Math.random()*50)+150)+','+parseInt(Math.random()*30)+')"></div>'
+					}
+				}
+				$('HundertMeter_Rasen_Container').innerHTML=HundertMeter_RasenHTML;
+			}
+			HundertMeter_LaufbahnObenGenerator=function(){
+				HundertMeter_LaufbahnObenHTML='';
+				HundertMeter_LaufbahnObenBreite=HundertMeter_PixelBreite;
+				HundertMeter_LaufbahnObenHoehe=HundertMeter_PixelHoehe;
+				for(r=0;r<100/HundertMeter_PixelBreite;r++){
+					for(t=0;t<100/HundertMeter_HimmelHoehe;t++){
+						HundertMeter_LaufbahnObenHTML+='<div class="HundertMeter_LaufbahnOben_Teil" style="left:'+r*HundertMeter_LaufbahnObenBreite+'%;top:'+t*HundertMeter_LaufbahnObenHoehe+'%;background-color:rgb('+parseInt((Math.random()*30)+190)+','+parseInt((Math.random()*30)+160)+','+parseInt((Math.random()*30)+30)+')"></div>'
+					}
+				}
+				$('HundertMeter_LaufbahnOben').innerHTML=HundertMeter_LaufbahnObenHTML;
+			}
+			HundertMeter_LaufbahnUntenGenerator=function(){
+				HundertMeter_LaufbahnUntenHTML='';
+				HundertMeter_LaufbahnUntenBreite=HundertMeter_PixelBreite;
+				HundertMeter_LaufbahnUntenHoehe=HundertMeter_PixelHoehe;
+				for(r=0;r<100/HundertMeter_PixelBreite;r++){
+					for(t=0;t<100/HundertMeter_HimmelHoehe;t++){
+						HundertMeter_LaufbahnUntenHTML+='<div class="HundertMeter_LaufbahnUnten_Teil" style="left:'+r*HundertMeter_LaufbahnUntenBreite+'%;top:'+t*HundertMeter_LaufbahnUntenHoehe+'%;background-color:rgb('+parseInt((Math.random()*30)+190)+','+parseInt((Math.random()*30)+160)+','+parseInt((Math.random()*30)+30)+')"></div>'
+					}
+				}
+				$('HundertMeter_LaufbahnUnten').innerHTML=HundertMeter_LaufbahnUntenHTML;
+			}
+			HundertMeter_LaufbahnMitteGenerator=function(){
+				HundertMeter_LaufbahnMitteHTML='';
+				HundertMeter_LaufbahnMitteBreite=HundertMeter_PixelBreite;
+				HundertMeter_LaufbahnMitteHoehe=HundertMeter_PixelHoehe;
+				for(r=0;r<100/HundertMeter_PixelBreite;r++){
+					for(t=0;t<100/HundertMeter_HimmelHoehe;t++){
+						HundertMeter_LaufbahnMitteHTML+='<div class="HundertMeter_LaufbahnMitte_Teil" style="left:'+r*HundertMeter_LaufbahnMitteBreite+'%;top:'+t*HundertMeter_LaufbahnMitteHoehe+'%;background-color:rgb('+parseInt((Math.random()*30)+130)+','+parseInt((Math.random()*10)+30)+','+parseInt((Math.random()*10)+30)+')"></div>'
+					}
+				}
+				$('HundertMeter_LaufbahnMitte_Container').innerHTML=HundertMeter_LaufbahnMitteHTML;
+			}
+			HundertMeter_Stadion_SitzschalenGenerator=function(){
+				HundertMeter_SchalenAnzahlHeight=10;
+				SchalenAnzahlWidth=40;
+				HundertMeter_Stadion_SitzschalenHTML='';
+				HundertMeter_Stadion_SitzschalenBreite=(100/SchalenAnzahlWidth)-0.05;
+				HundertMeter_Stadion_SitzschalenHoehe=(100/HundertMeter_SchalenAnzahlHeight)-0.05;
+				for(i=0;i<=SchalenAnzahlWidth;i++){
+					for(j=0;j<=HundertMeter_SchalenAnzahlHeight;j++){
+						HundertMeter_Stadion_SitzschalenHTML+='<div class="HundertMeter_Stadion_Sitzschale" style="left:'+(i*HundertMeter_Stadion_SitzschalenBreite).toFixed(2)+'%;top:'+(j*HundertMeter_Stadion_SitzschalenHoehe).toFixed(2)+'%;"></div>'
+					}
+				}
+				$('HundertMeter_Stadion_Sitzschalen').innerHTML=HundertMeter_Stadion_SitzschalenHTML;
+			}
+			HundertMeter_Stadion_PublikumGenerator=function(){
+				HundertMeter_Stadion_PublikumAnzahlHeight=10;
+				HundertMeter_Stadion_PublikumAnzahlWidth=40;
+				HundertMeter_Stadion_PublikumHTML='';
+				HundertMeter_Stadion_PublikumBreite=(100/HundertMeter_Stadion_PublikumAnzahlWidth)-0.05;
+				HundertMeter_Stadion_PublikumHoehe=(100/HundertMeter_Stadion_PublikumAnzahlHeight)-0.05;
+				for(i=0;i<=HundertMeter_Stadion_PublikumAnzahlWidth;i++){
+					for(j=0;j<=HundertMeter_Stadion_PublikumAnzahlHeight;j++){
+						vary=parseInt(Math.random()+.78)
+						if(vary==1){
+							HundertMeter_Stadion_PublikumHTML+='<div class="HundertMeter_Stadion_Publikum" style="background-color:rgb('+eval(240+parseInt(Math.random()*-30))+','+eval(210+parseInt(Math.random()*-30))+','+eval(170+parseInt(Math.random()*-30))+');left:'+(i*HundertMeter_Stadion_PublikumBreite).toFixed(2)+'%;top:'+(j*HundertMeter_Stadion_PublikumHoehe).toFixed(2)+'%;">'
+								+'<div class="HundertMeter_Stadion_Publikum_Haare"></div>'
+								+'<div class="HundertMeter_Stadion_Publikum_Auge_Links"></div>'
+								+'<div class="HundertMeter_Stadion_Publikum_Auge_Rechts"></div>'
+								+'<div class="HundertMeter_Stadion_Publikum_Mund"></div>'
+							+'</div>'
+						}
+					}
+				}
+				$('HundertMeter_Stadion_Publikum').innerHTML=HundertMeter_Stadion_PublikumHTML;
+			}
+
+			HundertMeter_StartStop=function(){
+				if(HundertMeter_StartGedrueckt==false){
+					HundertMeter_RennenStart();
+					$('HundertMeter_Startbutton').innerHTML='Stop';
+					$('HundertMeter_BackToHauptmenu').style.display='none';
+					HundertMeter_StartGedrueckt=true;
+				}else
+				if(HundertMeter_StartGedrueckt==true){
+					if(HundertMeter_Countdown){
+						clearInterval(HundertMeter_Countdown);
+					}
+					if(HundertMeter_SekundenCounter){
+						clearInterval(HundertMeter_SekundenCounter);
+					}
+					if(HundertMeter_RennenLeuft==true){
+						for(i=1;i<=HundertMeter_HundertMeter_SpielerAnzahl;i++){
+							if(eval('HundertMeter_Spieler'+i+'.select')=='Computer'){
+								clearInterval(eval('HundertMeter_Spieler'+i+'.Interval'));
+							}
+						}
+						HundertMeter_RennenLeuft==false;
+					}
+					$('HundertMeter_Startbutton').innerHTML='Start';
+					$('HundertMeter_BackToHauptmenu').style.display='block';
+					HundertMeter_DefaultSettings();
+					HundertMeter_StartGedrueckt=false;
+				}
+			}
+			HundertMeter_RennenStart=function(){
+				HundertMeter_CountdownTick=3;
+				$('HundertMeter_Rasen_ZeitAnzeige_Display_Output').innerHTML=HundertMeter_CountdownTick;
+				HundertstelSekunden=0;
+				ZehntelSekunden=0;
+				Sekunden=0;
+				Minuten=0;
+				HundertMeter_Countdown=setInterval('HundertMeter_CountdownChecker()',1000);
+			}
+			HundertMeter_CountdownChecker=function(){
+				HundertMeter_CountdownTick--;
+				$('HundertMeter_Rasen_ZeitAnzeige_Display_Output').innerHTML=HundertMeter_CountdownTick;
+				if(HundertMeter_CountdownTick==0){
+					HundertMeter_RennenLeuft=true;
+					clearInterval(HundertMeter_Countdown);
+					HundertMeter_SekundenCounter=setInterval('HundertMeter_Count()',10);
+					for(i=1;i<=HundertMeter_HundertMeter_SpielerAnzahl;i++){
+						if(eval('HundertMeter_Spieler'+i+'.select==\'Computer\'')){
+							HundertMeter_HundertMeter_SpielerInterval(i);
+						}
+					}
+				}
+			}
+			HundertMeter_Count=function(){
+				HundertstelSekunden++;
+				if(HundertstelSekunden==10){
+					ZehntelSekunden++;
+					HundertstelSekunden=0;
+				}
+				if(ZehntelSekunden==10){
+					Sekunden++;
+					ZehntelSekunden=0;
+				}
+				if(Sekunden==60){
+					Minuten++;
+					Sekunden=0;
+				}
+				if(Sekunden<10){
+					SekundenVary='0'+Sekunden;
+				}else{
+					SekundenVary=Sekunden;
+				}
+				if(Minuten<10){
+					MinutenVary='0'+Minuten;
+				}else{
+					MinutenVary=Minuten;
+				}
+				$('HundertMeter_Rasen_ZeitAnzeige_Display_Output').innerHTML=MinutenVary+':'+SekundenVary+':'+ZehntelSekunden+HundertstelSekunden;
+			}
+
+			HundertMeter_HundertMeter_SpielerInterval=function(wer){
+				eval('HundertMeter_Spieler'+wer+'.Interval=setInterval(\'HundertMeter_BewegDenHundertMeter_Spieler('+wer+')\','+eval(eval('HundertMeter_Spieler'+wer+'.Level')+parseInt(Math.random()*-20))+')');
+			}
+			HundertMeter_BewegDenHundertMeter_Spieler=function(wer){
+				if(eval('HundertMeter_Spieler'+wer+'.Tastgedruekt==false')){
+					HundertMeter_Bewegung(wer);
+					HundertMeter_HundertMeter_SpielerAnniA(wer);
+					eval('HundertMeter_Spieler'+wer+'.Tastgedruekt=true');
+				}else{
+					eval('HundertMeter_Spieler'+wer+'.Tastgedruekt=false');
+					HundertMeter_HundertMeter_SpielerAnniB(wer);
+				}
+			}
+
+			HundertMeter_Bewegung=function(wer){
+				if(eval('HundertMeter_Spieler'+wer+'.IstImZiel==false')){
+					if(HundertMeter_StartGedrueckt==true){
+						if(HundertMeter_RennenLeuft==false){
+							eval('HundertMeter_Spieler'+wer+'.FehlStartCounter++');
+								clearInterval(HundertMeter_Countdown);
+								HundertMeter_StartGedrueckt=false;
+							$('HundertMeter_Rasen_ZeitAnzeige_Display_Output').innerHTML='';
+							$('HundertMeter_Startbutton').innerHTML='Start';
+							$('HundertMeter_BackToHauptmenu').style.display='block';
+							HundertMeter_DefaultSettings();
+							HundertMeter_StartGedrueckt=false;
+							alert('Fehlstart! Anzahl der Fehlstarts:'+eval('HundertMeter_Spieler'+wer+'.FehlStartCounter')+'. \n Beim '+eval(eval('HundertMeter_Spieler'+wer+'.FehlStartCounter')+2)+'. mal Fehstarten gibs nischts...');
+						}else
+						if(HundertMeter_RennenLeuft==true){
+							$('HundertMeter_Spieler'+wer).style.left=parseFloat($('HundertMeter_Spieler'+wer).style.left)+HundertMeter_Schrittweite;
+							if($('HundertMeter_Spieler'+wer).offsetLeft>HundertMeter_Laufbereich+HundertMeter_Startbereich){
+								if(eval('HundertMeter_Spieler'+wer+'.select==\'Computer\'')){
+									if(eval('HundertMeter_Spieler'+wer+'.Interval')){
+										clearInterval(eval('HundertMeter_Spieler'+wer+'.Interval'));
+									}
+								}
+								$('HundertMeter_AnzeigeTafel_Display_Zeitnahme'+HundertMeter_AnzeigeTafel_Display_ZeitnahmePosition).innerHTML=MinutenVary+':'+SekundenVary+':'+ZehntelSekunden+HundertstelSekunden;
+								$('HundertMeter_AnzeigeTafel_Display_Zeitnahme'+HundertMeter_AnzeigeTafel_Display_ZeitnahmePosition).style.color=eval('HundertMeter_Spieler'+wer+'.Koerperteile.Schulter');
+								HundertMeter_AnzeigeTafel_Display_ZeitnahmePosition++;
+								eval('HundertMeter_Spieler'+wer+'.IstImZiel=true');
+								if(HundertMeter_AnzeigeTafel_Display_ZeitnahmePosition>HundertMeter_HundertMeter_SpielerAnzahl){
+									clearInterval(HundertMeter_SekundenCounter);
+								}
+							}
+						}
+					}
+				}
+			}
+			HundertMeter_HundertMeter_SpielerAnniA=function(wer){
+				$('HundertMeter_Spieler'+wer+'_ArmLinks_TeilA').style.left=40+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmLinks_TeilA').style.top=35+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmLinks_TeilB').style.left=40+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmLinks_TeilB').style.top=20+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmRechts_TeilA').style.left=43+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmRechts_TeilA').style.top=17+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmRechts_TeilB').style.left=62+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmRechts_TeilB').style.top=5+'%';
+				$('HundertMeter_Spieler'+wer+'_HandLinks').style.left=40+'%';
+				$('HundertMeter_Spieler'+wer+'_HandLinks').style.top=35+'%';
+				$('HundertMeter_Spieler'+wer+'_HandRechts').style.left=62+'%';
+				$('HundertMeter_Spieler'+wer+'_HandRechts').style.top=2+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinLinks_TeilA').style.left=53+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinLinks_TeilA').style.top=45+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinLinks_TeilB').style.left=72+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinLinks_TeilB').style.top=50+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinRechts_TeilA').style.left=20+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinRechts_TeilA').style.top=60+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinRechts_TeilB').style.left=35+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinRechts_TeilB').style.top=40+'%';
+				$('HundertMeter_Spieler'+wer+'_FussLinks').style.left=76+'%';
+				$('HundertMeter_Spieler'+wer+'_FussLinks').style.top=67+'%';
+				$('HundertMeter_Spieler'+wer+'_FussRechts').style.left=20+'%';
+				$('HundertMeter_Spieler'+wer+'_FussRechts').style.top=57+'%';
+			}
+			HundertMeter_HundertMeter_SpielerAnniB=function(wer){
+				$('HundertMeter_Spieler'+wer+'_ArmLinks_TeilA').style.left=53+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmLinks_TeilA').style.top=26+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmLinks_TeilB').style.left=72+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmLinks_TeilB').style.top=16+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmRechts_TeilA').style.left=30+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmRechts_TeilA').style.top=30+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmRechts_TeilB').style.left=30+'%';
+				$('HundertMeter_Spieler'+wer+'_ArmRechts_TeilB').style.top=15+'%';
+				$('HundertMeter_Spieler'+wer+'_HandLinks').style.left=72+'%';
+				$('HundertMeter_Spieler'+wer+'_HandLinks').style.top=10+'%';
+				$('HundertMeter_Spieler'+wer+'_HandRechts').style.left=50+'%';
+				$('HundertMeter_Spieler'+wer+'_HandRechts').style.top=30+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinLinks_TeilA').style.left=30+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinLinks_TeilA').style.top=65+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinLinks_TeilB').style.left=45+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinLinks_TeilB').style.top=45+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinRechts_TeilA').style.left=43+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinRechts_TeilA').style.top=40+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinRechts_TeilB').style.left=62+'%';
+				$('HundertMeter_Spieler'+wer+'_BeinRechts_TeilB').style.top=45+'%';
+				$('HundertMeter_Spieler'+wer+'_FussLinks').style.left=30+'%';
+				$('HundertMeter_Spieler'+wer+'_FussLinks').style.top=65+'%';
+				$('HundertMeter_Spieler'+wer+'_FussRechts').style.left=62+'%';
+				$('HundertMeter_Spieler'+wer+'_FussRechts').style.top=65+'%';
+			}
+
+			light=function(wer,color){
+					wer.style.backgroundColor=color;
+			}
+			ChangePlayerType=function(wer){
+				if(eval('HundertMeter_Spieler'+wer+'.select')=='Mensch'){
+					eval('HundertMeter_Spieler'+wer+'.select=\'Computer\'');
+					$('HundertMeter_Spieler'+wer+'_Select_Output').innerHTML='Computer';
+					$('HundertMeter_ComputerSpieler'+wer+'Level').style.display='block';
+				}else
+				if(eval('HundertMeter_Spieler'+wer+'.select')=='Computer'){
+					eval('HundertMeter_Spieler'+wer+'.select=\'Mensch\'');
+					$('HundertMeter_Spieler'+wer+'_Select_Output').innerHTML='Mensch';
+					$('HundertMeter_ComputerSpieler'+wer+'Level').style.display='none';
+				}
+			}
+			ChangeComputerLevel=function(wer){
+				LevelVary=eval('HundertMeter_Spieler'+wer+'.Level');
+				switch(LevelVary){
+					case 100:
+						eval('HundertMeter_Spieler'+wer+'.Level=110');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=110;
+					break;
+					case 110:
+						eval('HundertMeter_Spieler'+wer+'.Level=120');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=120;
+					break;
+					case 120:
+						eval('HundertMeter_Spieler'+wer+'.Level=130');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=130;
+					break;
+					case 130:
+						eval('HundertMeter_Spieler'+wer+'.Level=140');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=140;
+					break;
+					case 140:
+						eval('HundertMeter_Spieler'+wer+'.Level=150');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=150;
+					break;
+					case 150:
+						eval('HundertMeter_Spieler'+wer+'.Level=60');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=60;
+					break;
+					case 60:
+						eval('HundertMeter_Spieler'+wer+'.Level=70');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=70;
+					break;
+					case 70:
+						eval('HundertMeter_Spieler'+wer+'.Level=80');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=80;
+					break;
+					case 80:
+						eval('HundertMeter_Spieler'+wer+'.Level=90');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=90;
+					break;
+					case 90:
+						eval('HundertMeter_Spieler'+wer+'.Level=100');
+						$('HundertMeter_ComputerSpieler'+wer+'Level').innerHTML=100;
+					break;
+				}
+			}
+		// ]]>
+		</script>
+	</head>
+	<body id="body " onload="init()"}>
+		<div id="Mainscreen">
+			<div id="Hauptmenu">
+				<div id="HundertMeter_Info_Button" class="HundertMeter_Button" onmouseover="light(this,999999)" onmouseout="light(this,888888)" onclick="openWindow('HundertMeter_Info')">Info</div>
+				<div id="Spielerauswahlbutton" class="HundertMeter_Button" onmouseover="light(this,999999)" onmouseout="light(this,888888)" onclick="openWindow('Spielerauswahl')">Spielerauswahl</div>
+				<div id="Spielauswahlbutton" class="HundertMeter_Button" onmouseover="light(this,999999)" onmouseout="light(this,888888)" onclick="openWindow('Spielauswahl')">Spielauswahl</div>
+				<div id="Startbutton" class="HundertMeter_Button" onmouseover="light(this,999999)" onmouseout="light(this,888888)" onclick="openWindow('GameFenster')">Start</div>
+			</div>
+			<div id="HundertMeter_Info">
+				<div class="text">
+					<p>Dieses Spiel kann mit bis zu 4 Spielern gespielt werden. Stelle in der Spielerauswahl einen oder mehrere Spieler auf Mensch und drücke danach auf den Startbutton im Hauptmenu.</p>
+					<p>Du kannst nun deinen Spieler mit abwechselndem Tastendruck bewegen. Bevor du auf Rennen-Starten drückst, überprüfe deine Tasten.</p>
+					<h1>Tastenbelegung</h1>
+					<h2>Player 1: Y,X</h2>
+					<h2>Player 2: N,M</h2>
+					<h2>Player 3: 1,Q</h2>
+					<h2>Player 4: 0,O</h2>
+					<p>Die Computer können verschiedene Stärken haben (klick auf die Zahl unter der Computer-Spieler). 60 ist sehr stark. 150 ist schwach.
+				</div>
+				<div id="HundertMeter_Info_BackToHauptmenu" onclick="openWindow('Hauptmenu')">
+					Back
+				</div>
+			</div>
+			<div id="Spielerauswahl">
+				<div id="HundertMeter_Spieler1_Select" ondblclick="ChangePlayerType(1)">
+					<div id="HundertMeter_ComputerSpieler1Level" class="HundertMeter_ComputerSpieler_Level" onclick="ChangeComputerLevel(1)"></div>
+					<div id="HundertMeter_Spieler1_Select_Output"></div>
+				</div>
+				<div id="HundertMeter_Spieler2_Select" ondblclick="ChangePlayerType(2)">
+					<div id="HundertMeter_ComputerSpieler2Level" class="HundertMeter_ComputerSpieler_Level" onclick="ChangeComputerLevel(2)"></div>
+					<div id="HundertMeter_Spieler2_Select_Output"></div>
+				</div>
+				<div id="HundertMeter_Spieler3_Select" ondblclick="ChangePlayerType(3)">
+					<div id="HundertMeter_ComputerSpieler3Level" class="HundertMeter_ComputerSpieler_Level" onclick="ChangeComputerLevel(3)"></div>
+					<div id="HundertMeter_Spieler3_Select_Output"></div>
+				</div>
+				<div id="HundertMeter_Spieler4_Select" ondblclick="ChangePlayerType(4)">
+					<div id="HundertMeter_ComputerSpieler4Level" class="HundertMeter_ComputerSpieler_Level" onclick="ChangeComputerLevel(4)"></div>
+					<div id="HundertMeter_Spieler4_Select_Output"></div>
+				</div>
+				<div style="position:absolute;top:70%;">
+					<p>Um von Computer auf Mensch umzustellen, einfach Doppelklick auf den Player</p>
+					<p>Das Level der Computer kannst du per Klick auf die Zahl ändern. (60:Schwer...150:Leicht)</p>
+				</div>
+				<div id="HundertMeter_Spielerauswahl_BackToHauptmenu" onclick="openWindow('Hauptmenu')">
+					Back
+				</div>
+			</div>
+			<div id="Spielauswahl">
+				<div id="HundertMeter_Auswahlbutton" class="GameAuswahlButton" onclick="ChangeGameAuswahl('HundertMeter')">
+					HundertMeter
+				</div>
+				<div id="HundertMeter_Spielauswahl_BackToHauptmenu" onclick="openWindow('Hauptmenu')">
+					Back
+				</div>
+			</div>
+
+			<div id="GameFenster">
+				<div id="HundertMeter">
+					<div id="HundertMeter_Himmel">
+						<div id="HundertMeter_HimmelContainer"></div>
+						<div id="HundertMeter_AnzeigeTafel">
+							<div id="HundertMeter_AnzeigeTafel_Display">
+								<div id="HundertMeter_AnzeigeTafel_Display_Zeitnahme1" class="HundertMeter_AnzeigeTafel_Display_Zeitnahme"></div>
+								<div id="HundertMeter_AnzeigeTafel_Display_Zeitnahme2" class="HundertMeter_AnzeigeTafel_Display_Zeitnahme"></div>
+								<div id="HundertMeter_AnzeigeTafel_Display_Zeitnahme3" class="HundertMeter_AnzeigeTafel_Display_Zeitnahme"></div>
+								<div id="HundertMeter_AnzeigeTafel_Display_Zeitnahme4" class="HundertMeter_AnzeigeTafel_Display_Zeitnahme"></div>
+							</div>
+						</div>
+						<div id="HundertMeter_AnzeigeTafel_Fuss_Links"></div>
+						<div id="HundertMeter_AnzeigeTafel_Fuss_Rechts"></div>
+					</div>
+					<div id="HundertMeter_Stadion">
+						<div id="HundertMeter_Stadion_Sitzschalen"></div>
+						<div id="HundertMeter_Stadion_Publikum"></div>
+						<div id="HundertMeter_Stadion_EingangLinks" class="HundertMeter_Stadion_Eingang">
+							<div class="HundertMeter_Stadion_Eingang_Gate"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe1"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe2"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe3"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe4"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe5"></div>
+						</div>
+						<div id="HundertMeter_Stadion_EingangMitte" class="HundertMeter_Stadion_Eingang">
+							<div class="HundertMeter_Stadion_Eingang_Gate"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe1"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe2"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe3"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe4"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe5"></div>
+						</div>
+						<div id="HundertMeter_Stadion_EingangRechts" class="HundertMeter_Stadion_Eingang">
+							<div class="HundertMeter_Stadion_Eingang_Gate"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe1"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe2"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe3"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe4"></div>
+							<div class="HundertMeter_Stadion_Eingang_Stufe HundertMeter_Stadion_Eingang_Stufe5"></div>
+						</div>
+						<div id="HundertMeter_Stadion_KanteOben"></div>
+						<div id="HundertMeter_Stadion_KanteUnten">
+							<div id="HundertMeter_Stadion_KanteUnten_Bandenwerbung1" class="HundertMeter_Stadion_KanteUnten_Bandenwerbung">Jutti</div>
+							<div id="HundertMeter_Stadion_KanteUnten_Bandenwerbung2" class="HundertMeter_Stadion_KanteUnten_Bandenwerbung">3000</div>
+							<div id="HundertMeter_Stadion_KanteUnten_Bandenwerbung3" class="HundertMeter_Stadion_KanteUnten_Bandenwerbung">Jutti</div>
+							<div id="HundertMeter_Stadion_KanteUnten_Bandenwerbung4" class="HundertMeter_Stadion_KanteUnten_Bandenwerbung">3000</div>
+							<div id="HundertMeter_Stadion_KanteUnten_Bandenwerbung5" class="HundertMeter_Stadion_KanteUnten_Bandenwerbung">Jutti</div>
+							<div id="HundertMeter_Stadion_KanteUnten_Bandenwerbung6" class="HundertMeter_Stadion_KanteUnten_Bandenwerbung">3000</div>
+							<div id="HundertMeter_Stadion_KanteUnten_Bandenwerbung7" class="HundertMeter_Stadion_KanteUnten_Bandenwerbung">Jutti</div>
+							<div id="HundertMeter_Stadion_KanteUnten_Bandenwerbung8" class="HundertMeter_Stadion_KanteUnten_Bandenwerbung">3000</div>
+							<div id="HundertMeter_Stadion_KanteUnten_Bandenwerbung9" class="HundertMeter_Stadion_KanteUnten_Bandenwerbung">Jutti</div>
+						</div>
+					</div>
+					<div id="HundertMeter_LaufbahnOben"></div>
+					<div id="HundertMeter_LaufbahnMitte">
+						<div id="HundertMeter_LaufbahnMitte_Container"></div>
+						<div id="HundertMeter_LaufbahnMitte_Strich1" class="HundertMeter_LaufbahnMitte_Strich"></div>
+						<div id="HundertMeter_LaufbahnMitte_Strich2" class="HundertMeter_LaufbahnMitte_Strich"></div>
+						<div id="HundertMeter_LaufbahnMitte_Strich3" class="HundertMeter_LaufbahnMitte_Strich"></div>
+						<div id="HundertMeter_LaufbahnMitte_Strich4" class="HundertMeter_LaufbahnMitte_Strich"></div>
+						<div id="HundertMeter_LaufbahnMitte_Strich5" class="HundertMeter_LaufbahnMitte_Strich"></div>
+						<div id="HundertMeter_LaufbahnMitte_StartLinie" class="HundertMeter_LaufbahnMitte_StartLinie"></div>
+						<div id="HundertMeter_LaufbahnMitte_ZielLinie" class="HundertMeter_LaufbahnMitte_ZielLinie"></div>
+					</div>
+					<div id="HundertMeter_Spieler1" class="HundertMeter_Spieler">
+						<div id="HundertMeter_Spieler1_ArmLinks_TeilA" class="HundertMeter_Spieler_ArmLinks_TeilA"></div>
+						<div id="HundertMeter_Spieler1_ArmLinks_TeilB" class="HundertMeter_Spieler_ArmLinks_TeilB"></div>
+						<div id="HundertMeter_Spieler1_HandLinks" class="HundertMeter_Spieler_HandLinks"></div>
+						<div id="HundertMeter_Spieler1_Kopf" class="HundertMeter_Spieler_Kopf">
+							<div id="HundertMeter_Spieler1_Kopf_Haare" class="HundertMeter_Spieler_Kopf_Haare"></div>
+						</div>
+						<div id="HundertMeter_Spieler1_Schulter" class="HundertMeter_Spieler_Schulter"></div>
+						<div id="HundertMeter_Spieler1_Brust" class="HundertMeter_Spieler_Brust"></div>
+						<div id="HundertMeter_Spieler1_ArmRechts_TeilA" class="HundertMeter_Spieler_ArmRechts_TeilA"></div>
+						<div id="HundertMeter_Spieler1_ArmRechts_TeilB" class="HundertMeter_Spieler_ArmRechts_TeilB"></div>
+						<div id="HundertMeter_Spieler1_HandRechts" class="HundertMeter_Spieler_HandRechts"></div>
+						<div id="HundertMeter_Spieler1_Huefte" class="HundertMeter_Spieler_Huefte"></div>
+						<div id="HundertMeter_Spieler1_BeinRechts_TeilA" class="HundertMeter_Spieler_BeinRechts_TeilA"></div>
+						<div id="HundertMeter_Spieler1_BeinRechts_TeilB" class="HundertMeter_Spieler_BeinRechts_TeilB"></div>
+						<div id="HundertMeter_Spieler1_FussRechts" class="HundertMeter_Spieler_FussRechts"></div>
+						<div id="HundertMeter_Spieler1_BeinLinks_TeilA" class="HundertMeter_Spieler_BeinLinks_TeilA"></div>
+						<div id="HundertMeter_Spieler1_BeinLinks_TeilB" class="HundertMeter_Spieler_BeinLinks_TeilB"></div>
+						<div id="HundertMeter_Spieler1_FussLinks" class="HundertMeter_Spieler_FussLinks"></div>
+					</div>
+					<div id="HundertMeter_Spieler2" class="HundertMeter_Spieler">
+						<div id="HundertMeter_Spieler2_ArmLinks_TeilA" class="HundertMeter_Spieler_ArmLinks_TeilA"></div>
+						<div id="HundertMeter_Spieler2_ArmLinks_TeilB" class="HundertMeter_Spieler_ArmLinks_TeilB"></div>
+						<div id="HundertMeter_Spieler2_HandLinks" class="HundertMeter_Spieler_HandLinks"></div>
+						<div id="HundertMeter_Spieler2_Kopf" class="HundertMeter_Spieler_Kopf">
+							<div id="HundertMeter_Spieler2_Kopf_Haare" class="HundertMeter_Spieler_Kopf_Haare"></div>
+						</div>
+						<div id="HundertMeter_Spieler2_Schulter" class="HundertMeter_Spieler_Schulter"></div>
+						<div id="HundertMeter_Spieler2_Brust" class="HundertMeter_Spieler_Brust"></div>
+						<div id="HundertMeter_Spieler2_ArmRechts_TeilA" class="HundertMeter_Spieler_ArmRechts_TeilA"></div>
+						<div id="HundertMeter_Spieler2_ArmRechts_TeilB" class="HundertMeter_Spieler_ArmRechts_TeilB"></div>
+						<div id="HundertMeter_Spieler2_HandRechts" class="HundertMeter_Spieler_HandRechts"></div>
+						<div id="HundertMeter_Spieler2_Huefte" class="HundertMeter_Spieler_Huefte"></div>
+						<div id="HundertMeter_Spieler2_BeinRechts_TeilA" class="HundertMeter_Spieler_BeinRechts_TeilA"></div>
+						<div id="HundertMeter_Spieler2_BeinRechts_TeilB" class="HundertMeter_Spieler_BeinRechts_TeilB"></div>
+						<div id="HundertMeter_Spieler2_FussRechts" class="HundertMeter_Spieler_FussRechts"></div>
+						<div id="HundertMeter_Spieler2_BeinLinks_TeilA" class="HundertMeter_Spieler_BeinLinks_TeilA"></div>
+						<div id="HundertMeter_Spieler2_BeinLinks_TeilB" class="HundertMeter_Spieler_BeinLinks_TeilB"></div>
+						<div id="HundertMeter_Spieler2_FussLinks" class="HundertMeter_Spieler_FussLinks"></div>
+					</div>
+					<div id="HundertMeter_Spieler3" class="HundertMeter_Spieler">
+						<div id="HundertMeter_Spieler3_ArmLinks_TeilA" class="HundertMeter_Spieler_ArmLinks_TeilA"></div>
+						<div id="HundertMeter_Spieler3_ArmLinks_TeilB" class="HundertMeter_Spieler_ArmLinks_TeilB"></div>
+						<div id="HundertMeter_Spieler3_HandLinks" class="HundertMeter_Spieler_HandLinks"></div>
+						<div id="HundertMeter_Spieler3_Kopf" class="HundertMeter_Spieler_Kopf">
+							<div id="HundertMeter_Spieler3_Kopf_Haare" class="HundertMeter_Spieler_Kopf_Haare"></div>
+						</div>
+						<div id="HundertMeter_Spieler3_Schulter" class="HundertMeter_Spieler_Schulter"></div>
+						<div id="HundertMeter_Spieler3_Brust" class="HundertMeter_Spieler_Brust"></div>
+						<div id="HundertMeter_Spieler3_ArmRechts_TeilA" class="HundertMeter_Spieler_ArmRechts_TeilA"></div>
+						<div id="HundertMeter_Spieler3_ArmRechts_TeilB" class="HundertMeter_Spieler_ArmRechts_TeilB"></div>
+						<div id="HundertMeter_Spieler3_HandRechts" class="HundertMeter_Spieler_HandRechts"></div>
+						<div id="HundertMeter_Spieler3_Huefte" class="HundertMeter_Spieler_Huefte"></div>
+						<div id="HundertMeter_Spieler3_BeinRechts_TeilA" class="HundertMeter_Spieler_BeinRechts_TeilA"></div>
+						<div id="HundertMeter_Spieler3_BeinRechts_TeilB" class="HundertMeter_Spieler_BeinRechts_TeilB"></div>
+						<div id="HundertMeter_Spieler3_FussRechts" class="HundertMeter_Spieler_FussRechts"></div>
+						<div id="HundertMeter_Spieler3_BeinLinks_TeilA" class="HundertMeter_Spieler_BeinLinks_TeilA"></div>
+						<div id="HundertMeter_Spieler3_BeinLinks_TeilB" class="HundertMeter_Spieler_BeinLinks_TeilB"></div>
+						<div id="HundertMeter_Spieler3_FussLinks" class="HundertMeter_Spieler_FussLinks"></div>
+					</div>
+					<div id="HundertMeter_Spieler4" class="HundertMeter_Spieler">
+						<div id="HundertMeter_Spieler4_ArmLinks_TeilA" class="HundertMeter_Spieler_ArmLinks_TeilA"></div>
+						<div id="HundertMeter_Spieler4_ArmLinks_TeilB" class="HundertMeter_Spieler_ArmLinks_TeilB"></div>
+						<div id="HundertMeter_Spieler4_HandLinks" class="HundertMeter_Spieler_HandLinks"></div>
+						<div id="HundertMeter_Spieler4_Kopf" class="HundertMeter_Spieler_Kopf">
+							<div id="HundertMeter_Spieler4_Kopf_Haare" class="HundertMeter_Spieler_Kopf_Haare"></div>
+						</div>
+						<div id="HundertMeter_Spieler4_Schulter" class="HundertMeter_Spieler_Schulter"></div>
+						<div id="HundertMeter_Spieler4_Brust" class="HundertMeter_Spieler_Brust"></div>
+						<div id="HundertMeter_Spieler4_ArmRechts_TeilA" class="HundertMeter_Spieler_ArmRechts_TeilA"></div>
+						<div id="HundertMeter_Spieler4_ArmRechts_TeilB" class="HundertMeter_Spieler_ArmRechts_TeilB"></div>
+						<div id="HundertMeter_Spieler4_HandRechts" class="HundertMeter_Spieler_HandRechts"></div>
+						<div id="HundertMeter_Spieler4_Huefte" class="HundertMeter_Spieler_Huefte"></div>
+						<div id="HundertMeter_Spieler4_BeinRechts_TeilA" class="HundertMeter_Spieler_BeinRechts_TeilA"></div>
+						<div id="HundertMeter_Spieler4_BeinRechts_TeilB" class="HundertMeter_Spieler_BeinRechts_TeilB"></div>
+						<div id="HundertMeter_Spieler4_FussRechts" class="HundertMeter_Spieler_FussRechts"></div>
+						<div id="HundertMeter_Spieler4_BeinLinks_TeilA" class="HundertMeter_Spieler_BeinLinks_TeilA"></div>
+						<div id="HundertMeter_Spieler4_BeinLinks_TeilB" class="HundertMeter_Spieler_BeinLinks_TeilB"></div>
+						<div id="HundertMeter_Spieler4_FussLinks" class="HundertMeter_Spieler_FussLinks"></div>
+					</div>
+					<div id="HundertMeter_LaufbahnUnten"></div>
+					<div id="HundertMeter_Rasen">
+						<div id="HundertMeter_Rasen_Container"></div>
+						<div class="HundertMeter_Rasen_Kante"></div>
+						<div id="HundertMeter_Startbutton" onclick="HundertMeter_StartStop()">
+							Start
+						</div>
+						<div id="HundertMeter_BackToHauptmenu" onclick="openWindow('Hauptmenu')">
+							Back
+						</div>
+						<div id="HundertMeter_Rasen_ZeitAnzeige_Container">
+							<div id="HundertMeter_Rasen_ZeitAnzeige_Display">
+								<div id="HundertMeter_Rasen_ZeitAnzeige_Display_Output"></div>
+							</div>
+							<div id="HundertMeter_Rasen_ZeitAnzeige_FussLinks"></div>
+							<div id="HundertMeter_Rasen_ZeitAnzeige_FussRecchts"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="Back" style="position:absolute;right:37px;top:10px;">
+			<a
+				href="http://www.greenbubbles.de/jutti3000/games/index.htm"
+				onfocus="this.blur()"
+				title="Schnell weg hier!"
+			>
+				<img
+					src="images/button/backbutton_normal.png"
+					width="150px"
+					height="50px"
+					border="0"
+					onmouseover="this.src='images/button/backbutton_mover.png'"
+					onmouseout="this.src='images/button/backbutton_normal.png'"
+					onmousedown="this.src='images/button/backbutton_pushed.png'"
+				>
+			</a>
+		</div>
+		<div id="Logo" style="position:absolute;bottom:10px;right:10px;">
+			<a
+				href="http://jutti3000.com/"
+				onfocus="this.blur()"
+				title="Zurück zu Jutti...!"
+			>
+				<img
+					border="0"
+					src="images/Juttilogo.png"
+					width="186px"
+					height="43px"
+				>
+			</a>
+		</div>
+	</body>
+</html>

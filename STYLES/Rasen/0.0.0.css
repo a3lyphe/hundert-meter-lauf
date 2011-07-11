@@ -1,0 +1,69 @@
+/*+Rasen*/
+#HundertMeter_Rasen{
+	left:0%;
+	top:85%;
+	width:100%;
+	height:15%;
+	background-color:green;
+	overflow:hidden;
+}
+	.HundertMeter_Rasen_Kante{
+	left:0%;
+	top:0%;
+	width:100%;
+	height:5%;
+	background-color:#555555;
+}
+#HundertMeter_Rasen_Container{
+	left:0%;
+	top:0%;
+	width:100%;
+	height:100%;
+	background-color:blue;
+}
+	.HundertMeter_Rasen_Teil{
+	width:100%;
+	height:100%;
+}
+#HundertMeter_Rasen_ZeitAnzeige_Container{
+	left:70%;
+	top:10%;
+	width:30%;
+	height:75%;
+}
+#HundertMeter_Rasen_ZeitAnzeige_Display{
+	left:5%;
+	top:5%;
+	width:90%;
+	height:85%;
+	background-color:#999999;
+	border:#111111 thin solid;
+}
+#HundertMeter_Rasen_ZeitAnzeige_Display_Output{
+	left:5%;
+	top:5%;
+	width:90%;
+	height:90%;
+	background-color:#111111;
+	text-align:center;
+	color:yellow;
+	font-size:180%;
+	border:white thin solid;
+}
+#HundertMeter_Rasen_ZeitAnzeige_FussLinks{
+	left:20%;
+	top:90%;
+	width:20%;
+	height:10%;
+	background-color:#666666;
+	border:#111111 thin solid;
+}
+#HundertMeter_Rasen_ZeitAnzeige_FussRecchts{
+	left:60%;
+	top:90%;
+	width:20%;
+	height:10%;
+	background-color:#666666;
+	border:#111111 thin solid;
+}
+	/*-Rasen*/
